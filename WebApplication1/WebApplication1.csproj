@@ -161,6 +161,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Add.cshtml" />
     <Content Include="Views\Home\Buy.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\EditBook.cshtml" />
+    <Content Include="Views\Home\Some.cshtml" />
+    <Content Include="Views\Home\Add2.cshtml" />
+    <Content Include="Views\Home\Add3.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

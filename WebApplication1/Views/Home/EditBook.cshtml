@@ -1,0 +1,43 @@
+﻿@using WebApplication1.Models
+@model Book
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditBook</title>
+</head>
+<body>
+    <div> 
+        
+        <h2>Книга № </h2>
+        @using (Html.BeginForm("EditBook", "Home", FormMethod.Post))
+        {
+            <fieldset>
+                @Html.HiddenFor(m => m.BookId)
+                <p>
+                    @Html.LabelFor(m => m.Name, "Название книги")
+                    <br />
+                    @Html.EditorFor(m => m.Name)
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Author, "Автор")
+                    <br />
+                    @Html.EditorFor(m => m.Author)
+
+                </p>
+                <p>
+                    @Html.LabelFor(m => m.Price, "Цена")
+                    <br />
+                    @Html.EditorFor(m => m.Price)
+                </p>
+                <p><input type="submit" value="Отправить" /></p>
+            </fieldset>
+        }
+    </div>
+</body>
+</html>

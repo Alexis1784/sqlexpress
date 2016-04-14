@@ -1,0 +1,40 @@
+﻿@using WebApplication1.Models;
+@model Book 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div> 
+        
+    </div>
+    <div>
+        @using (Html.BeginForm())
+{        
+          
+             <p>@Html.EditorFor(model => model.BookId)</p>
+             <p>
+                 Название
+                 @Html.DisplayFor(model => model.Name)
+                 @Html.Hidden("Name", Model.Name)
+             </p>
+             <p>Автор
+                 @Html.EditorFor(model => model.Author)
+             </p>     
+             <p>Цена
+                 @Html.EditorFor(model => model.Price)
+             </p>       
+             <p><input type="submit" value="Отправить" /></p> 
+          
+}
+</div>
+</body>
+</html>

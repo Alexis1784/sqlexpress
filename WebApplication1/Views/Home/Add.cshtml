@@ -31,7 +31,51 @@
             }
         </table>
         <p>@Html.DropDownList("countires", new SelectList(new string[] { "Russia", "USA", "Canada", "France" }), "Countries")</p>
-        <p>@Html.DropDownList("first_arg", new SelectList(ViewBag.Books, "Author", "Name"), "third_arg")</p>
-    </div>
+        <p>@Html.DropDownList("first_arg", new SelectList(ViewBag.Books, "Author", "Name"), "third_arg", new { size=3})</p>
+        <p>
+            <select id="first_arg" name="first_arg">
+                <option disabled value="">third_arg</option>
+                <option value="Quian1">Phantasy1</option>
+                <option value="Quian2">Phantasy2</option>
+                <option value="Quian3">Phantasy3</option>
+            </select>
+        </p>
+        <p>@Html.DropDownList("first_arg", new SelectList(ViewBag.Books, "Author", "Name"), "DropDownList", new { multiple = "multiple" })</p>
+        <p>@Html.ListBox("first_arg", new MultiSelectList(ViewBag.Books, "Author", "Name"))</p>
+
+        <p>
+            @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+            {
+
+                @Html.DropDownList("first_arg", new SelectList(ViewBag.Books, "Author", "Name"), "third_arg");               
+                <p><input type="submit" value="отправить!" /> </p>
+            }
+        </p>
+        <p>
+            @using (Html.BeginForm("Buy2", "Home", FormMethod.Post))
+            {
+               
+                @Html.TextArea("first_arg2", "second_arg");
+            <p><input type="submit" value="отправить!" /> </p>
+            }
+            </p>
+        <p>
+            @using (Html.BeginForm("Buy2", "Home", FormMethod.Post))
+            {
+
+                @Html.RadioButton("first_arg2", "second_arg1"); <br/>                
+                @Html.RadioButton("first_arg2", "second_arg2"); @Html.Label("first_arg2", "sec_lable_arg");<br/>
+                @Html.RadioButton("first_arg2", "second_arg3", true);<br/>
+            <p><input type="submit" value="отправить!" /> </p>
+            }
+            </p>
+        <p>
+            @using (Html.BeginForm("Buy3", "Home", FormMethod.Post))
+            {
+                @Html.DropDownList("first_arg", new SelectList(ViewBag.Books, "Author", "Name"), "header_3_arg", new { multiple = "multiple" });
+            <p><input type="submit" value="отправить!" /> </p>
+            }
+            </p>
+</div>
 </body>
 </html>

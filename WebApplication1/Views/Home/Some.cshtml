@@ -1,0 +1,53 @@
+﻿@model WebApplication1.Models.Book
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Some</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        { 
+             <h2>Тоже текстовое поле созданное строго типизированным хэлпером</h2>
+             @Html.TextBoxFor(m => m.Name);
+             @Html.TextBoxFor(m => m.Name, Model.Name);
+        }
+    </div>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("Name2", "val2");
+            @Html.TextBox("Name3", "val3");
+            @Html.TextBox("Name4", "val4");
+            @Html.TextBox("Name6", "name6_1");
+            <p>@Html.CheckBox("Name6")</p>
+            @Html.TextBox("Name6", "name6_2");
+            @Html.TextBox("Name6", "name6_3");
+            <p>@Html.CheckBox("Name5")</p>
+            <p><input name="inp" type="submit" value="отправить1"/></p>
+            <p><input name="inp" type="submit" value="отправить2"/></p>
+            <p><input name="inp3" type="submit" value="отправить3"/></p>
+            <p><button name="act" value="actv1">but1</button></p>
+            <p><button name="act" value="actv2">but2</button></p>
+        }
+    </div>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("Name6", "name6_1");
+            <p>@Html.CheckBox("Name6")</p>
+            @Html.TextBox("Name6", "name6_2");
+            @Html.TextBox("Name6", "name6_3");
+            
+            <p><input name="inp" type="submit" value="отправить1" /></p>
+        }
+    </div>
+</body>
+</html>
