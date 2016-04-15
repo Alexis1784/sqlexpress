@@ -145,5 +145,17 @@ namespace WebApplication1.Controllers
             else
                 return "It's null!";
         }
+
+        
+        public ActionResult GetAuthor()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string GetAuthor(Author author)
+        {
+            return author.Name+author.Books.FirstOrDefault().Name;
+        }
     }
 }

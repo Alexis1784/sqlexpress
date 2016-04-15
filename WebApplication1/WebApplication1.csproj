@@ -123,6 +123,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookDbContext.cs" />
     <Compile Include="Models\BookDbInitializer.cs" />
@@ -166,6 +167,7 @@
     <Content Include="Views\Home\Some.cshtml" />
     <Content Include="Views\Home\Add2.cshtml" />
     <Content Include="Views\Home\Add3.cshtml" />
+    <Content Include="Views\Home\GetAuthor.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
