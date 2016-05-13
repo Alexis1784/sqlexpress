@@ -155,7 +155,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public string GetAuthor(Author author)
         {
-            return author.Name+author.Books.FirstOrDefault().Name;
+            return author.Name+author.Book.Name;
         }
     }
 }

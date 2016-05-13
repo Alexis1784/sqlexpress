@@ -8,9 +8,29 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/MyScripts/first.js"></script>
     <title>Add</title>
 </head>
 <body>
+    <button onclick="loadPhones()">Загрузить phones.json!</button>
+
+    <script>
+        function loadPhones() {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', 'phones.json', false);
+            xhr.send();
+
+            if (xhr.status != 200) {
+                // обработать ошибку
+                alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+            } else {
+                // вывести результат
+                alert(xhr.responseText);
+            }
+        }
+    </script>
+    
     <div> 
         <h3>Распродажа книг</h3>
         <table>

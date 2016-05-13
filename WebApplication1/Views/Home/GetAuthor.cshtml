@@ -10,8 +10,14 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>GetAuthor</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+    </script>
+    
+
 </head>
 <body>
+    @Scripts.Render("~/bundles/myscripts")
+    
     <div> 
         <h2>Добавление книг</h2>
 
@@ -20,6 +26,7 @@
             @Html.AntiForgeryToken()
             <div class="authorBlock">
                 <label>Имя автора</label>
+                <label>Имя автора2</label>
                 <input type="text" name="name" />
             </div>
             <div id="booksBlock">
@@ -28,7 +35,7 @@
                     <div>
                         <label>Название</label>
                         <div>
-                            <input type="text" name="Books[0].name" />
+                            <input type="text" name="Book.Name" />
                         </div>
                     </div>
                 </div>
@@ -38,22 +45,14 @@
             <p><input type="submit" value="Добавить" /></p>
         }
 
-        @section Scripts {
-            <script>
-                $(function () {
-                    var i = 0;
-                    $('.addLink').click(function () {
-                        i++;
-                        var html2Add = "<div class='bookItem'>" +
-                     "<h4>Книга № " + (i + 1) + "</h4>" +
-                     "<div><label>Название</label><div>" +
-                             "<input type='text' name='Books[" + i + "].name' />" +
-                         "</div></div></div>";
-                        $('#booksBlock').append(html2Add);
-                    })
-                })
-            </script>
-        }
+         
     </div>
+    <script>
+        $(function () {
+            alert('Подключена последняя версия jQuery через Google хостинг');
+        });
+
+        $('label').hide();
+    </script>
 </body>
 </html>
